@@ -10,32 +10,22 @@
 <body>
     <h1>WLiT fellowship kathmandu 2022</h1>
     <p>We are going to learn how node and expressjs works</p>
-    <a href="/" class="btn btn-success">Add To-Do</a>
+    <a href="/add-to-do" class="btn btn-success">Add To-Do</a>
 
 
-
-    <div class="card" style="width: 18rem; margin-top: 10px;">
-        <div class="card-body">
-            <h5 class="card-title">Buy Grocery</h5>
-            <p class="card-text">Vegetables, rice, dal</p>
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-        </div>
+    <% todosList.forEach((todo, index) => { %>
         <div class="card" style="width: 18rem; margin-top: 10px;">
             <div class="card-body">
-                <h5 class="card-title">Buy Grocery</h5>
-                <p class="card-text">Vegetables, rice, dal</p>
-                <a href="#" class="btn btn-primary">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <h5 class="card-title">
+                    <%= todo.title %>
+                </h5>
+                <p class="card-text">
+                    <%= todo.description %>
+                </p>
+                <a href="/open-update-form/<%= todo._id %>" class="btn btn-primary">Edit</a>
+                <a href="/delete-to-do/<%= index %>" class="btn btn-danger">Delete</a>
             </div>
-            <div class="card" style="width: 18rem; margin-top: 10px;">
-                <div class="card-body">
-                    <h5 class="card-title">Buy Grocery</h5>
-                    <p class="card-text">Vegetables, rice, dal</p>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </div>
-            </div>
+            <% }) %>
 
 </body>
 
