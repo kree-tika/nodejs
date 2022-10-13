@@ -23,7 +23,7 @@
                     <%= todo.description %>
                 </p>
                 <a href="/open-update-form/<%= todo._id %>" class="btn btn-primary">Edit</a>
-                <a href="/delete-to-do/<%= index %>" class="btn btn-danger">Delete</a>
+                <a href="/delete-to-do/<%= todo._id %>" class="btn btn-danger">Delete</a>
             </div>
             <% }) %>
 
